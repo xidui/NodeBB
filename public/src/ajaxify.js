@@ -217,18 +217,30 @@ $(document).ready(function() {
 			tpl_url: tpl_url,
 			scripts: [location + tpl_url]
 		};
+		var script;
 
 		$(window).trigger('action:script.load', data);
 
-		require(data.scripts, function(script) {
-			if (script && script.init) {
+		if (!tpl_url.startsWith('admin')) {
+			script = require('client/' + tpl_url);
+			if (script.hasOwnProperty('init')) {
 				script.init();
 			}
-
-			if (callback) {
-				callback();
+		} else {
+			script = require('admin/' + tpl_url.slice(6));
+			if (script.hasOwnProperty('init')) {
+				script.init();
 			}
-		});
+		}
+		// require(data.scripts, function(script) {
+		// 	if (script && script.init) {
+		// 		script.init();
+		// 	}
+
+		// 	if (callback) {
+		// 		callback();
+		// 	}
+		// });
 	};
 
 	ajaxify.loadData = function(url, callback) {

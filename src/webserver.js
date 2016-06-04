@@ -88,6 +88,7 @@ function initializeNodeBB(callback) {
 		async.apply(meta.js.bridgeModules, app),
 		function(next) {
 			async.series([
+				async.apply(meta.assets.build),
 				async.apply(meta.templates.compile),
 				async.apply(!skipJS ? meta.js.minify : meta.js.getFromFile, 'nodebb.min.js'),
 				async.apply(!skipJS ? meta.js.minify : meta.js.getFromFile, 'acp.min.js'),
