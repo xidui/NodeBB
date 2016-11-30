@@ -60,8 +60,6 @@
 	</div>
 </div>
 
-<!-- IMPORT admin/settings/header.tpl -->
-
 <div class="row">
 	<div class="col-sm-2 col-xs-12 settings-header">
 		Profile Avatars
@@ -114,6 +112,13 @@
 				<p class="help-block">
 					(in kilobytes, default: 2,048 KiB)
 				</p>
+			</div>
+
+			<div class="checkbox">
+				<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+					<input class="mdl-switch__input" type="checkbox" data-field="profile:keepAllUserImages">
+					<span class="mdl-switch__label"><strong>Keep old versions of avatars and profile covers on the server</strong></span>
+				</label>
 			</div>
 		</form>
 	</div>

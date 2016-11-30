@@ -95,15 +95,27 @@
 			<div class="panel-heading">System Control</div>
 			<div class="panel-body text-center">
 				<p>
-					<button class="btn btn-warning reload" data-placement="bottom" data-toggle="tooltip" title="Reload NodeBB to activate new plugins">Reload</button>
-					<button class="btn btn-danger restart" data-placement="bottom" data-toggle="tooltip" title="Restarting NodeBB will drop all existing connections for a few seconds">Restart</button>
+					<div class="btn-group">
+						<button class="btn btn-warning reload">Reload</button>
+						<button class="btn btn-danger restart">Restart</button>
+					</div>
+				</p>
+				<p class="help-block">
+					Reloading or Restarting your NodeBB will drop all existing connections for a few seconds. 
 				</p>
 				<p>
-					<a href="{config.relative_path}/admin/settings/advanced" class="btn btn-info" data-placement="bottom" data-toggle="tooltip" title="Click here to set up maintenance mode for NodeBB">Maintenance Mode</a>
+					<a href="{config.relative_path}/admin/settings/advanced" class="btn btn-info btn-block" data-placement="bottom" data-toggle="tooltip" title="Click here to set up maintenance mode for NodeBB">Maintenance Mode</a>
 				</p>
 
 				<hr />
 				<span id="toggle-realtime">Realtime Chart Updates <strong>OFF</strong> <i class="fa fa fa-toggle-off pointer"></i></span>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Active Users</div>
+			<div class="panel-body">
+				<div id="active-users"></div>
 			</div>
 		</div>
 
@@ -146,13 +158,5 @@
 			</div>
 		</div>
 
-
-
-		<div class="panel panel-default">
-			<div class="panel-heading">Active Users</div>
-			<div class="panel-body">
-				<div id="active-users"></div>
-			</div>
-		</div>
 	</div>
 </div>
